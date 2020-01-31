@@ -1,5 +1,9 @@
+# Ansible complete playbook here!!
+
+# As you can see, we can run incrementally playbooks in a machine safely, idempotencia?????????????????????????
+
 ---
-  - name: Configuring RaspberryPI
+  - name: Configuring RaspberryPi
     hosts: localhost
     vars:
       main_user: arcones

@@ -1,0 +1,21 @@
+# First ansible playbok here!
+
+# A playbook is where we use ansible commands to build an automation script
+# A playbook is formed by plays, each of them is introduced by its name, for example, this ansible playbook have one play named "Configuring RaspberryPi"
+
+# Then, each play can have several tasks, each of them precedeed by a dash
+# Here, we have a task name "Install my favourite browser"
+
+# Tasks make use of the ansible modules to perform actions, for example here, the module is "package" which is used to install packages
+# Each ansible module has a documentation page where how is it used is explained (also some useful code snippets are provided)
+# For example the documentation of the package module is here https://docs.ansible.com/ansible/latest/modules/package_module.html
+
+---
+  - name: Configuring RaspberryPi
+    hosts: localhost
+    tasks:
+    - name: Install my favourite browser
+      package:
+        name:
+        - firefox
+        state: latest 
