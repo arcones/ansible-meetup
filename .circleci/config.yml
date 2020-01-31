@@ -17,3 +17,6 @@ jobs:
       - run:
           name: Run third ansible playbook
           command: docker run raspbian-ansible-test:latest ansible-playbook playbook-3.yml
+      - run:
+          name: Run fourth ansible playbook
+          command: docker run raspbian-ansible-test:latest ansible-playbook playbook-4.yml

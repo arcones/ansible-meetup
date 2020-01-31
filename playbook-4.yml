@@ -1,0 +1,25 @@
+# Fourth ansible playbok here!
+
+# In this iteration, we have started using variables not to repeat ourselves
+# As the name of the main user of the machine were repeated in many places of the playbook, we have used a vars to have its value set in a single place
+
+---
+  - name: Configuring RaspberryPi
+    hosts: localhost
+    vars:
+      main_user: arcones
+    tasks:
+    - name: Install required tools 
+      package:
+        name:
+        - firefox
+        - vim
+    - name: Set a custom user user
+      user:
+        name: "{{ main_user }}"
+        groups: sudo
+    - name: Configure vim by adding its configuration
+      copy:
+        src: .vimrc
+        dest: /home/{{ main_user }}/.vimrc
+        owner: "{{ main_user }}"
