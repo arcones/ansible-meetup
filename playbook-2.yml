@@ -15,7 +15,6 @@
       package:
         name:
         - firefox
-        state: latest 
     - name: Set my user
       user:
         name: "arcones"

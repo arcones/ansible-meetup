@@ -12,8 +12,8 @@ jobs:
           name: Run first ansible playbook
           command: docker run raspbian-ansible-test:latest ansible-playbook playbook-1.yml
       - run:
-          name: Run seconf ansible playbook
+          name: Run second ansible playbook
           command: docker run raspbian-ansible-test:latest ansible-playbook playbook-2.yml
       - run:
-          name: Run complete ansible playbook
-          command: docker run raspbian-ansible-test:latest ansible-playbook playbook-complete.yml
+          name: Run third ansible playbook
+          command: docker run raspbian-ansible-test:latest ansible-playbook playbook-3.yml
