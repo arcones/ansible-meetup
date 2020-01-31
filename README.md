@@ -19,7 +19,7 @@ There is a Dockerfile to build an image that can be used to test the playbook wi
 You can build the image & run the container with:
 
 ```
-docker build -t raspbian-ansible-test . && docker run raspbian-ansible-test:latest ansible-playbook playbook.yml 
+docker build -t raspbian-ansible-test . && docker run raspbian-ansible-test ansible-playbook playbook.yml 
 ```
 
 If it ends succesfully, the playbook is working well.
@@ -32,5 +32,4 @@ Its current status is [![CircleCI](https://circleci.com/gh/arcones/ansible-meetu
 - Add ssh + sudoers configuration that needs to be done in the raspi
 - Add raspbian docker image (for the raspis)
 - Change the localhost thingy of the playbooks!!!
-- Work on the playbook:
-    Add .vimrc
+- Add here info about the incremental playbooks-1,2,3 etc
