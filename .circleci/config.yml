@@ -1,0 +1,13 @@
+version: 2.1
+
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Build a docker container to test ansible playbook
+          command:  docker build raspbian-ansible-test .
+      - run:
+          name: Run ansible playbook in the docker container
+          command: docker run raspbian-ansible-test:latest ansible-playbook playbook.yml
