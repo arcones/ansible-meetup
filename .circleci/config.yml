@@ -9,5 +9,5 @@ jobs:
           name: Build a docker container to test ansible playbook
           command:  docker build -t raspbian-ansible-test .
       - run:
-          name: Run ansible playbook in the docker container
+          name: Run ansible playbook inside docker
           command: docker run raspbian-ansible-test:latest ansible-playbook playbook.yml
