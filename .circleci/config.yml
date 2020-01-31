@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build a docker container to test ansible playbook
+          name: Build a docker container to test ansible playbooks
           command:  docker build -t raspbian-ansible-test .
       - run:
           name: Run first ansible playbook
