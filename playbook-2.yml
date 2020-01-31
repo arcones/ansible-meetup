@@ -1,0 +1,22 @@
+# Second ansible playbok here!
+
+# As ansible playbook files are yaml (yet another markdown language), correct indentation is mandatory (two spaces)
+
+# In this playbook I have added a task to the "Configuring RaspberryPi" play
+# The task is intended to create an user in the raspberry for me to use
+# I want also the user to be added to sudo group to be able to perform privileged tasks
+
+
+---
+  - name: Configuring RaspberryPi
+    hosts: localhost
+    tasks:
+    - name: Install my favourite browser
+      package:
+        name:
+        - firefox
+        state: latest 
+    - name: Set my user
+      user:
+        name: "arcones"
+        groups: sudo
