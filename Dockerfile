@@ -1,4 +1,4 @@
-FROM raspbian:latest
+FROM raspbian/stretch:latest
 
 LABEL maintainer="marta.arcones@gmail.com"
 
