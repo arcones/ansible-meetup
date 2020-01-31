@@ -1,6 +1,9 @@
-# First ansible playbok here!
+# First ansible playbook here!
 
-# Ansible is based on playbooks like this one, where we use ansible commands to build an automation script
+# Ansible is based on playbooks like this one, where we use ansible commands to build an automation script, we have named this play "Configuring RaspberryPi"
+
+# The hosts key refers to the systems where this playbook is going to be installed, here only our RaspberryPi, but could be many systems with only one playbook 
+# The group of hosts where we are applying ansible playbook is refered as "the inventory"
 
 # A playbook can have several tasks, each of them precedeed by a dash
 # Here, we have a task name "Install my favourite browser"

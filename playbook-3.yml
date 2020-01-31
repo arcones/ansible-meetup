@@ -1,4 +1,4 @@
-# Third ansible playbok here!
+# Third ansible playbook here!
 
 # Here we have extended the package task to install also vim, a text editor
 # We also want to establish a configuration on vim (color scheme, etc) so a .vimrc file is required

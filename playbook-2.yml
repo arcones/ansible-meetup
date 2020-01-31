@@ -1,4 +1,7 @@
-# Second ansible playbok here!
+# Second ansible playbook here!
+
+# Ansible runs with an agentless configuration, that means, from the computer you will run ansible, that is, the control node, you will have installed ansible
+# But in the remote hosts only ssh is required (no ansible installation needed there)
 
 # As ansible playbook files are yaml (yet another markdown language), correct indentation is mandatory (two spaces)
 
