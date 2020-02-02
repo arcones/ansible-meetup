@@ -15,4 +15,6 @@ For more info check directly the contents of `playbook.yml`
  - This [configuration](./PRECONFIG.md) should be done
 
 # Roadmap :motorway:
+- Add slides
+- Add images to README (arch diagram, for example)
 - Add here info about the incremental playbooks-1,2,3 etc
