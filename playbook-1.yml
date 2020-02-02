@@ -2,8 +2,10 @@
 
 # Ansible is based on playbooks like this one, where we use ansible commands to build an automation script, we have named this play "Configuring RaspberryPi"
 
-# The hosts key refers to the systems where this playbook is going to be installed, here only our RaspberryPi, but could be many systems with only one playbook 
+# The hosts key refers to the systems where this playbook is going to be installed, here only our RaspberryPi4, but could be many systems with only one playbook 
 # The group of hosts where we are applying ansible playbook is refered as "the inventory"
+
+# The become key is used to grant ansible administrator (sudo) privileges on the machine.
 
 # A playbook can have several tasks, each of them precedeed by a dash
 # Here, we have a task name "Install my favourite browser"
@@ -14,9 +16,14 @@
 
 ---
   - name: Configuring RaspberryPi
-    hosts: localhost
+    hosts: RaspberryPi4
+    become: yes
     tasks:
-    - name: Install my favourite browser
-      package:
-        name:
-        - firefox
+    - name: Update cache & upgrade installed packages
+      apt:
+        upgrade: full
+        update_cache: yes
+    - name: Install my tools
+      apt:
+        pkg:
+          - firefox-esr
