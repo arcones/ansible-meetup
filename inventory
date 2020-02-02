@@ -1,2 +1,7 @@
+# Ansible inventory here!
+# - This file stores information to connect the control node with the target machines where our ansible tasks are going to be applied
+# - If this file is not present, ansible will use a defalt inventory located in /etc/ansible/hosts
+# - Therefore we should explicitly tell ansible to use this file (we will see it in a moment)
+
 [Raspberrys]
 192.168.0.11
