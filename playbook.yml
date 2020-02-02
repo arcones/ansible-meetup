@@ -2,6 +2,10 @@
 # - As ansible playbooks are YAML files, indentation must be correct. Each level is indented with two spaces
 # - I have added an additional task to this play to create an user in the system, using the "user" module 
 # - At the end, I have used the debug module to print a Hello world when ansible reachs that line
+# - When we run an ansible playbook, each task will end with a status, shown in the "PLAY RECAP" section. The most usual statuses are:
+#    - changed -> when the task has been succesfully performed in the host
+#    - failed -> when during the task execution, a problem has occurred
+#    - ok -> when it has not been needed to run the task as it was already done
 ---
   - name: Configuring RaspberryPis
     hosts: Raspberrys
