@@ -7,23 +7,15 @@
     hosts: Raspberrys
     become: yes
     tasks:
-    - name: Update cache & upgrade packages
-      apt:
-        upgrade: full
-        update_cache: yes
-    - name: Uninstall software that I will not use
-      apt:
-        pkg:
-          - bluej
-          - greenfoot
-          - libreoffice*
-        state: absent
-        autoclean: yes
     - name: Install my tools
       apt:
         pkg:
           - firefox-esr
         update_cache: yes
+    - name: Create a user
+      user:
+        name: "arcones"
+        groups: sudo
     - name: Hello world in ansible playbook
       debug:
         msg: "Hello world"
