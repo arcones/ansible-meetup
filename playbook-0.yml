@@ -15,8 +15,8 @@
 # For example the documentation of the package module is here https://docs.ansible.com/ansible/latest/modules/apt_module.html
 
 ---
-  - name: Configuring RaspberryPi
-    hosts: RaspberryPi4
+  - name: Configuring RaspberryPis
+    hosts: Raspberrys
     become: yes
     tasks:
     - name: Update cache & upgrade packages

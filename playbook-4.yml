@@ -3,6 +3,8 @@
 # In this iteration, we have started using variables not to repeat ourselves
 # As the name of the main user of the machine were repeated in many places of the playbook, we have used a vars to have its value set in a single place
 
+# Moreover, we have started to apply some tasks to certain roles only
+# handlers de excepciones & notify...
 ---
   - name: Configuring RaspberryPi
     hosts: RaspberryPi4
