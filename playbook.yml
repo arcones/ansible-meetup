@@ -1,21 +1,29 @@
 # Ansible playbook here!
-# - As ansible playbooks are YAML files, indentation must be correct. Each level is indented with two spaces
-# - I have added an additional task to this play to create an user in the system, using the "user" module 
-# - At the end, I have used the debug module to print a Hello world when ansible reachs that line
+# - Here we have started to use a variable not to repeat a value across the playbook
+# - I have installed an additional package in the Raspberry, vim, adding it in our former pkg module. Ansible will be smart enough to know which packages are needed to achieve the desired state so, it will not reinstall firefox
+# - We are using the module "copy" to copy a file to the RaspberryPi 
+# - We are now printing some more interesting thingys, ansible_facts that are info that is fetched by ansible before to apply the playbook tasks in it
 ---
   - name: Configuring RaspberryPis
     hosts: Raspberrys
+    vars:
+      main_user: "arcones"
     become: yes
     tasks:
     - name: Install my tools
       apt:
         pkg:
           - firefox-esr
+          - vim
         update_cache: yes
+    - name: Configure vim by adding its configuration
+      copy:
+        src: .vimrc
+        dest: /home/{{ main_user }}/.vimrc
+        owner: "{{ main_user }}"
     - name: Create a user
       user:
-        name: "arcones"
+        name: "{{ main_user }}"
         groups: sudo
-    - name: Hello world in ansible playbook
-      debug:
-        msg: "Hello world"
+    - name: Print info about target hosts
+      debug: "{{ ansible_facts }}"
