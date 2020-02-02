@@ -1,16 +1,21 @@
 # Ansible playbook here!
-# - Ansible is based on playbooks like this one, where we use ansible commands to build an automation script
-# - The hosts key refers to the systems where this playbook is going to be installed, here only one, but could be many systems with only one playbook
-# - The become key is used to grant ansible administrator (sudo) privileges on the target machine.
-# - A playbook can have several tasks, each of them precedeed by a dash. Here, we have a task name "Update cache & upgrade packages". Tasks make use of the ansible modules to perform actions, for example here, the module is "apt" which is used to install packages
-# - Each ansible module has a documentation page where how is it used is explained (also some useful code snippets are provided). For example the documentation of the package module is here https://docs.ansible.com/ansible/latest/modules/apt_module.html
-
+# - As ansible playbooks are YAML files, indentation must be correct. Each level is indented with two spaces
+# - I have added some additional tasks to this play, one to uninstall some packages and another one to install Firefox
+# - At the end, I have used the debug block to print a Hello world when ansible reachs that line 
 ---
   - name: Configuring RaspberryPis
     hosts: Raspberrys
     become: yes
     tasks:
-    - name: Update cache & upgrade packages
+    - name: Install my tools
       apt:
-        upgrade: full
+        pkg:
+          - firefox-esr
         update_cache: yes
+    - name: Create a user
+      user:
+        name: "arcones"
+        groups: sudo
+    - name: Hello world in ansible playbook
+      debug:
+        msg: "Hello world"
