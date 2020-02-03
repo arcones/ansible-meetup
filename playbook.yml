@@ -2,7 +2,8 @@
 # - Here we have started to use a variable not to repeat a value across the playbook
 # - I have installed an additional package in the Raspberry, vim, adding it in our former pkg module. Ansible will be smart enough to know which packages are needed to achieve the desired state so, it will not reinstall firefox
 # - We are using the module "copy" to copy a file to the RaspberryPi 
-# - We are now printing some more interesting thingys, ansible_facts that are info that is fetched by ansible before to apply the playbook tasks in it
+# - We are now printing in a block with a conditional written in natural language
+# - The vars we are printing are not defined at all because are facts, that is data fetched from the targets any time the playbook in run 
 ---
   - name: Configuring RaspberryPis
     hosts: Raspberrys
@@ -25,5 +26,7 @@
       user:
         name: "{{ main_user }}"
         groups: sudo
-    - name: Print the Ethernet MAC of target hosts
-      debug: "The MAC is {{ ansible_default_ipv4.macaddress }}. Awesome!!!!"
+    - name: Print the IP address of target hosts
+      debug:
+        msg: System {{ inventory_hostname }} has gateway {{ ansible_default_ipv4.gateway }}
+      when: ansible_default_ipv4.gateway is defined
