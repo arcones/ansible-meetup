@@ -9,6 +9,7 @@
   - name: Configuring RaspberryPis
     hosts: Raspberrys
     become: yes
+    tasks:
     - name: Install my tools
       apt:
         pkg:
