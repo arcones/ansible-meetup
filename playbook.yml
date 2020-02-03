@@ -25,5 +25,5 @@
       user:
         name: "{{ main_user }}"
         groups: sudo
-    - name: Print info about target hosts
-      debug: "{{ ansible_facts }}"
+    - name: Print the Ethernet MAC of target hosts
+      debug: "The MAC is {{ ansible_default_ipv4.macaddress }}. Awesome!!!!"
