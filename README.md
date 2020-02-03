@@ -18,8 +18,3 @@ For more info check directly the contents of `playbook.yml`
 *master* branch doesn't contain any code. 
 You should switch to branches *step1*, *step2* and so on and check the files in each of those branches.
 The files that will be appearing in any incremental checkout will have comments inside to understand them.
-
-# Roadmap :motorway:
-- Add slides
-- Add images to README (arch diagram, for example)
-- Add here info about the incremental playbooks-1,2,3 etc
