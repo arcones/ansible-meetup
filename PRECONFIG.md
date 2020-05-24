@@ -15,7 +15,7 @@
 
 - From the control node, switch to *ansible* user with `sudo su - ansible`
 - Copy the ssh key of your control node to the RaspberryPi with `ssh-copy-id <theAliasOfYourRaspberryPi>`
-- Now, if doing `ssh pi@<theAliasOfYourRaspberryPi>` works without password the ssh copy has worked
+- Now, if doing `ssh ansible@<theAliasOfYourRaspberryPi>` works without password the ssh copy has worked
 - Logout from the RaspberryPi with the command `logout`
 
 - Login again in the RaspberryPi with `ssh pi@<theAliasOfYourRaspberryPi>`
